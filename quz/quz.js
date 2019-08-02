@@ -8,7 +8,18 @@
  * @returns {List}
  */
 function dcate(A, B) {
-	/** Fill in here **/
+    /** Fill in here **/
+    //[ 4 6 7 3 8 3 2 5 9 ]
+    function findTail(obj) {
+        if (obj.tail == null) {
+            obj.tail = B;
+        } else {
+            findTail(obj.tail);
+        }
+    }
+    findTail(A);
+    return A;
+
 }
 
 /**
@@ -23,5 +34,20 @@ function dcate(A, B) {
  * @returns {List}
  */
 function sub(L, start, len) {
-	/** Fill in here **/
+    /** Fill in here **/
+    let i = 0;
+    let B = new List();
+
+    function findTail(obj) {
+        if (i == start - 1) {
+            B = obj.tail;
+        } else if (i == start + len) {
+            obj.tail = null;
+        } else {
+            i++;
+            findTail(obj.tail);
+        }
+    }
+    findTail(L);
+    return B;
 }
