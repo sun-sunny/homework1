@@ -5,6 +5,9 @@ node_js:
 addons:
   chrome: stable
 
+services:
+  - xvfb
+
 before_script:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
@@ -14,6 +17,4 @@ before_script:
 before_install:
   - npm install karma-cli -g
 
-services:
-  - xvfb
 # script: karma start karma.conf.js --single-run
