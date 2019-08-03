@@ -16,4 +16,4 @@ before_script:
 before_install:
   - npm install karma-cli -g
 
-script: karma start karma.conf.js --single-run
+# script: karma start karma.conf.js --single-run
