@@ -2,8 +2,6 @@ language: node_js
 node_js:
   - "8"
 
-sudo: required
-
 addons:
   chrome: stable
 
@@ -11,9 +9,11 @@ before_script:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-  # - sleep 3 # give xvfb some time to start
+  - sleep 3 # give xvfb some time to start
 
 before_install:
   - npm install karma-cli -g
 
+services:
+  - xvfb
 # script: karma start karma.conf.js --single-run
