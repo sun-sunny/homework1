@@ -16,5 +16,3 @@ services:
 
 before_install:
   - npm install karma-cli -g
-
-  script: node_modules/karma/bin/karma start ./karma.conf.js  --singleRun
